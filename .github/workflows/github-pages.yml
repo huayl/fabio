@@ -14,8 +14,8 @@ jobs:
         submodules: true
     - name: build
       uses: mattbailey/actions-hugo@v0.57.2
-      working-directory: ./docs
       if: github.event.deleted == false
+      working-directory: ./docs
       with:
         args: --gc --minify
       env:

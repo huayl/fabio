@@ -15,8 +15,7 @@ jobs:
     - name: build
       uses: mattbailey/actions-hugo@v0.57.2
       if: github.event.deleted == false
-      working-directory: ./docs
       with:
-        args: --gc --minify
+        args: --gc --minify -c "./docs"
       env:
         GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_TOKEN }}
